@@ -53,17 +53,22 @@ class _CreditCardWidgetState extends State<CreditCardWidget>
       vsync: this,
     );
 
-    backgroundGradientColor = LinearGradient(
+    backgroundGradientColor = const LinearGradient(
       // Where the linear gradient begins and ends
       begin: Alignment.topRight,
       end: Alignment.bottomLeft,
       // Add one stop for each color. Stops should increase from 0 to 1
-      stops: const <double>[0.1, 0.4, 0.7, 0.9],
+      stops: <double>[0.1,0.3, 0.4, 0.7, 0.9],
       colors: <Color>[
-        widget.cardBgColor.withOpacity(0.5),
-        widget.cardBgColor.withOpacity(0.45),
-        widget.cardBgColor.withOpacity(0.4),
-        widget.cardBgColor.withOpacity(0.3),
+        // Colors.blue.withOpacity(0.5),
+        // Colors.blue.withOpacity(0.45),
+        // Colors.blue.withOpacity(0.4),
+        // Colors.blue.withOpacity(0.3),
+        Color(0xff2fd1fa),
+        Color(0xff46a8f2),
+        Color(0xff3fa9f4),
+        Color(0xff5883df),
+        Color(0xff44b0ee),
       ],
     );
 
@@ -170,7 +175,7 @@ class _CreditCardWidgetState extends State<CreditCardWidget>
           (orientation == Orientation.portrait ? height / 4 : height / 2),
       child: Stack(
         children: <Widget>[
-          getRandomBackground(widget.height, widget.width ?? width),
+          //getRandomBackground(widget.height, widget.width ?? width),
           Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(16),
@@ -280,7 +285,7 @@ class _CreditCardWidgetState extends State<CreditCardWidget>
           (orientation == Orientation.portrait ? height / 4 : height / 2),
       child: Stack(
         children: <Widget>[
-          getRandomBackground(widget.height, widget.width),
+          //getRandomBackground(widget.height, widget.width),
           Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(16),
@@ -671,29 +676,29 @@ enum CardType {
   discover,
 }
 
-String randomPic = 'https://placeimg.com/680/400/nature';
+// String randomPic = 'https://placeimg.com/680/400/nature';
 
-Container getRandomBackground(double height, double width) {
-  return Container(
-    child: Flex(
-      direction: Axis.horizontal,
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
-        Expanded(
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(16.0),
-            child: Image.network(
-              randomPic,
-              width: width,
-              height: height,
-              fit: BoxFit.cover,
-            ),
-          ),
-        )
-      ],
-    ),
-  );
-}
+// Container getRandomBackground(double height, double width) {
+//   return Container(
+//     child: Flex(
+//       direction: Axis.horizontal,
+//       mainAxisAlignment: MainAxisAlignment.center,
+//       children: <Widget>[
+//         Expanded(
+//           child: ClipRRect(
+//             borderRadius: BorderRadius.circular(16.0),
+//             child: Image.network(
+//               randomPic,
+//               width: width,
+//               height: height,
+//               fit: BoxFit.cover,
+//             ),
+//           ),
+//         )
+//       ],
+//     ),
+//   );
+// }
 
 Container getChipImage() {
   return Container(
